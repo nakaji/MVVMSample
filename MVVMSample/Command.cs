@@ -3,12 +3,12 @@ using System.Windows.Input;
 
 namespace MVVMSample
 {
-    public class CalcCommand : ICommand
+    public class Command : ICommand
     {
         private Action _exec;
         private Func<bool> _canExec;
 
-        public CalcCommand(Action exec, Func<bool> canExec)
+        public Command(Action exec, Func<bool> canExec)
         {
             _exec = exec;
             _canExec = canExec;
