@@ -6,6 +6,21 @@ namespace MVVMSample
     public class BmiViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        private Command _calcCommand;
+
+        public Command CalcCommand
+        {
+            get
+            {
+                if (_calcCommand == null)
+                {
+                    _calcCommand = new Command(
+                        () => { Bmi = Math.Truncate((Weight/Math.Pow((Height/100), 2))*100)/100; },
+                        () => true);
+                }
+                return _calcCommand;
+            }
+        }
 
         private void RaisePropertyChanged(string propertyName)
         {
@@ -27,12 +42,6 @@ namespace MVVMSample
                 _bmi = value;
                 RaisePropertyChanged("Bmi");
             }
-        }
-
-        public void Calc()
-        {
-            //小数第2位で切り捨て
-            Bmi = Math.Truncate((Weight / Math.Pow((Height / 100), 2)) * 100) / 100;
         }
     }
 }
