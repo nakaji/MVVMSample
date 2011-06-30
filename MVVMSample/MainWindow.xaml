@@ -23,6 +23,6 @@
         <TextBox Name="heightText" Text="{Binding Path=Height}" Grid.Column="1" Margin="10" />
         <TextBox Name="weightText" Text="{Binding Path=Weight}" Grid.Row="1" Grid.Column="1" Margin="10" />
         <TextBlock Name="bmiText"  Text="{Binding Path=Bmi}" Grid.Row="2" Grid.Column="1" Margin="10" VerticalAlignment="Center" />
-        <Button Content="計算" Grid.Row="3" Name="calcButton" Grid.ColumnSpan="2" Margin="50,10,50,10" Click="calcButton_Click" />
+        <Button Content="計算" Grid.Row="3" Name="calcButton" Grid.ColumnSpan="2" Margin="50,10,50,10" Command="{Binding CalcCommand}" />
     </Grid>
 </Window>

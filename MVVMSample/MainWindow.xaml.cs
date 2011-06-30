@@ -11,11 +11,5 @@ namespace MVVMSample
         {
             InitializeComponent();
         }
-
-        private void calcButton_Click(object sender, RoutedEventArgs e)
-        {
-            var viewModel = (BmiViewModel) DataContext;
-            viewModel.Calc();
-        }
     }
 }
