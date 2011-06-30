@@ -16,7 +16,7 @@ namespace MVVMSampleTest
             viewModel.Height = 172;
             viewModel.Weight = 66;
 
-            viewModel.Calc();
+            viewModel.CalcCommand.Execute(null);
 
             Assert.That(viewModel.Bmi, Is.EqualTo(22.30));
         }
@@ -33,7 +33,7 @@ namespace MVVMSampleTest
 
             Assert.That(propertyName, Is.EqualTo(""));
 
-            viewModel.Calc();
+            viewModel.CalcCommand.Execute(null);
 
             Assert.That(propertyName, Is.EqualTo("Bmi"));
         }
